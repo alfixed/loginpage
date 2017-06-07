@@ -1,21 +1,22 @@
 <div id="signup">
   <h1>Sign Up for Free</h1>
 
-  <form action="/" method="post">
+  <form [formGroup]="formSignupModel">
+  <!--<form>-->
 
   <div class="top-row">
     <div class="field-wrap">
       <label>
         First Name<span class="req">*</span>
       </label>
-      <input type="text" required autocomplete="off" />
+      <input type="text" formControlName="firstName"/>
     </div>
 
     <div class="field-wrap">
       <label>
         Last Name<span class="req">*</span>
       </label>
-      <input type="text"required autocomplete="off"/>
+      <input type="text"  formControlName="lastName"/>
     </div>
   </div>
 
@@ -23,14 +24,20 @@
     <label>
       Email Address<span class="req">*</span>
     </label>
-    <input type="email"required autocomplete="off"/>
+    <input type="email"  formControlName="email"/>
   </div>
 
   <div class="field-wrap">
     <label>
       Set A Password<span class="req">*</span>
     </label>
-    <input type="password"required autocomplete="off"/>
+    <input type="password"  formControlName="password"/>
+    <div class="checks">
+      <div>#   must contains one digit from 0-9</div>
+      <div>#   must contains one lowercase characters</div>
+      <div>#   must contains one uppercase characters</div>
+      <div>#   length at least 6 characters and maximum of 20</div>
+    </div>
   </div>
 
   <input type="submit" class="button button-block" value="Get Started"/>
